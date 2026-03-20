@@ -10,8 +10,8 @@ class Helper
     public static function encryptor($string,$action){
         $output = false;
         $encrypt_method = "AES-256-CBC";
-        $secret_key = 'nexusliving';
-        $secret_iv = 'nexusliving@01053';
+        $secret_key = 'invoicecraft';
+        $secret_iv = 'invoicecraft@01053';
 
         // hash
         $key = hash('sha256', $secret_key);
