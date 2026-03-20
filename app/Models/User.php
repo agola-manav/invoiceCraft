@@ -24,10 +24,29 @@ class User extends Authenticatable
         'password',
     ];
 
+    const ADMIN = 1;
+    const USER = 0;
+
+    public static $allRole = [
+        self::USER => 'User',
+        self::ADMIN => 'Admin',
+    ];
+
+    public static function  getRoles()
+    {
+        return self::$allRole;
+    }
+
+
+    public static function  getRoleId($id)
+    {
+        return !empty(self::$allRole[$id]) ? self::$allRole[$id] : '';
+    }
+
     /**
      * The attributes that should be hidden for serialization.
      *
-     * @var list<string>
+     * @var array<int, string>
      */
     protected $hidden = [
         'password',
@@ -45,5 +64,19 @@ class User extends Authenticatable
             'email_verified_at' => 'datetime',
             'password' => 'hashed',
         ];
+    }
+
+    public function isAdmin($role){
+        if($role == self::ADMIN){
+            return true;
+        }
+        return false;
+    }
+
+    public function isUser($role){
+        if($role == self::USER){
+            return true;
+        }
+        return false;
     }
 }

@@ -1,0 +1,110 @@
+.site-header {
+	background-color: #121318;
+}
+
+.web-main-logo {
+	width: 300px;
+}
+
+
+.hero-section {
+    height: 100vh;
+    background: linear-gradient(rgba(0,0,0,0.9), rgba(0,0,0,0.7)), 
+                url("/assets/images/website-page-image/page-1.jpeg");
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    color: white;
+    display: flex;
+    align-items: center;
+    padding: 0 2rem;
+}
+
+.overlay-content {
+    max-width: 800px;
+}
+
+.overlay-content h1 {
+    font-size: 3rem;
+    font-weight: bold;
+}
+
+.overlay-content p {
+    font-size: 1.2rem;
+    margin-top: 1rem;
+    line-height: 1.6;
+}
+
+.demo-btn {
+    display: inline-block;
+    margin-top: 1.5rem;
+    padding: 0.75rem 2rem;
+    background-color: #f7b731;
+    color: #000;
+    font-weight: bold;
+    border-radius: 4px;
+    text-decoration: none;
+}
+
+
+.community-management-section {
+    background-color: #fff;
+}
+
+.timeline {
+    position: relative;
+    margin: 0 auto;
+    padding: 1rem 0;
+    width: 100%;
+    max-width: 1200px;
+}
+
+.timeline::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 0;
+    bottom: 0;
+    width: 4px;
+    background: #f1c40f;
+    transform: translateX(-50%);
+}
+
+.timeline-item {
+    position: relative;
+    width: 50%;
+    padding: 1.5rem;
+    box-sizing: border-box;
+}
+
+.timeline-item.left {
+    left: 0;
+    text-align: right;
+}
+
+.timeline-item.right {
+    left: 50%;
+    text-align: left;
+}
+
+.timeline-item .content {
+    background: #fff;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
+    position: relative;
+    z-index: 1;
+}
+
+.timeline-item .circle {
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #f1c40f;
+    color: white;
+    font-weight: bold;
+    padding: 10px;
+    border-radius: 50%;
+    z-index: 2;
+}
