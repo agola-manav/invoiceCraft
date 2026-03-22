@@ -6,9 +6,23 @@
         <!-- <li class="menu-title">Navigation</li> -->
 
         <li>
-            <a href="{{ route('user.dashboard') }}">
+            <a href="{{ route('companies.index') }}">
                 <i data-feather="home"></i>
-                <span> Dashboard </span>
+                <span> Company </span>
+            </a>
+        </li>
+
+        <li>
+            <a href="{{ route('payment-mode.index') }}">
+                <i data-feather="home"></i>
+                <span> Payment Mode </span>
+            </a>
+        </li>
+
+        <li>
+            <a href="{{ route('expense-category.index') }}">
+                <i data-feather="home"></i>
+                <span> Expense Category </span>
             </a>
         </li>
 

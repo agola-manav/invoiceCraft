@@ -18,10 +18,7 @@ class UserMiddleware
      */
     public function handle($request, Closure $next){
 
-        $role = auth()->user()->role ?? null;
-
-        print_r($role);
-        exit();
+        $role = auth()->user()->role ?? null; 
 
         if (auth()->check()) {
             if ($role == User::USER) {

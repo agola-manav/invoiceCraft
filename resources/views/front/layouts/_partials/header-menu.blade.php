@@ -20,7 +20,7 @@
             <div class="dropdown-divider"></div>
 
             <a onclick="event.preventDefault();
-                                 document.getElementById('logout-form').submit();" href="{{ route('admin.logout.post') }}" class="dropdown-item notify-item">
+                                 document.getElementById('logout-form').submit();" href="{{ route('user.logout.post') }}" class="dropdown-item notify-item">
                 <i data-feather="log-out" class="icon-dual icon-xs me-1"></i><span>Logout</span>
             </a>
 

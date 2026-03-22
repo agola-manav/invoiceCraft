@@ -56,11 +56,11 @@
             <!-- Topbar Start -->
             <div class="navbar-custom">
                 <div class="container-fluid">
-                    @include('admin.layouts._partials.header-menu')
+                    @include('front.layouts._partials.header-menu')
     
                     <!-- LOGO -->
                     <div class="logo-box">
-                        <a href="{{ route('admin.home') }}" class="logo logo-dark">
+                        <a href="{{ route('companies.index') }}" class="logo logo-dark">
                             <span class="logo-sm">
                                 <img src="{{ asset('assets/images/logo-sm.png') }}" alt="" height="24">
                                 <!-- <span class="logo-lg-text-light">Shreyu</span> -->
@@ -71,7 +71,7 @@
                             </span>
                         </a>
     
-                        {{-- <a href="{{ route('admin.home') }}" class="logo logo-light">
+                        {{-- <a href="{{ route('companies.index') }}" class="logo logo-light">
                             <span class="logo-sm">
                                 <img src="{{ asset('assets/images/logo-sm.png') }}" alt="" style="width: 50%;margin: 0 auto;">
                             </span>
@@ -124,11 +124,11 @@
                                 
                                 <div class="dropdown-divider"></div>
                                 <a onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();" href="{{ route('admin.logout.post') }}" class="dropdown-item notify-item">
+                                                     document.getElementById('logout-form').submit();" href="{{ route('user.logout.post') }}" class="dropdown-item notify-item">
                                     <i data-feather="log-out" class="icon-dual icon-xs me-1"></i><span>Logout</span>
                                 </a>
                                 
-                                <form id="logout-form" action="{{ route('admin.logout.post') }}" method="POST" style="display: none;">
+                                <form id="logout-form" action="{{ route('user.logout.post') }}" method="POST" style="display: none;">
                                     {{ csrf_field() }}
                                 </form>
 
@@ -137,7 +137,7 @@
                         <p class="text-muted">Admin Head</p>
                     </div>
 
-                    @include('admin.layouts._partials.nav')
+                    @include('front.layouts._partials.nav')
 
                     <div class="clearfix"></div>
 
@@ -166,7 +166,7 @@
                 </div> <!-- content -->
 
                 <!-- Footer Start -->
-                @include('admin.layouts._partials.footer')
+                @include('front.layouts._partials.footer')
                 <!-- end Footer -->
 
             </div>

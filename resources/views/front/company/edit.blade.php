@@ -34,10 +34,10 @@
         
         <!-- Header -->
         <div class="card-header bg-white border-bottom">
-            <h5 class="mb-0 fw-semibold">Add Company</h5>
+            <h5 class="mb-0 fw-semibold">Edit Company</h5>
         </div>
 
-        <form method="POST" action="{{ route('companies.store') }}" id="companyForm" enctype="multipart/form-data">
+        <form method="POST" action="{{ route('companies.update', \App\Helpers\Helper::encryptor($company->id, 'encrypt')) }}" id="companyForm" enctype="multipart/form-data">
             @csrf
 
             <div class="card-body">

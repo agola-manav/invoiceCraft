@@ -25,11 +25,27 @@ Route::get('reset-password/{token}', '\App\Http\Controllers\Front\Auth\ForgotPas
 Route::post('reset-password', '\App\Http\Controllers\Front\Auth\ForgotPasswordController@postResetPassword')->name('user.reset-password.post');
 
 Route::group(['middleware' => 'user'], function () {
-    Route::get('companies', '\App\Http\Controllers\Admin\CompanyController@index')->name('companies.index');
-    Route::get('companies/list', '\App\Http\Controllers\Admin\CompanyController@list')->name('companies.list');
-    Route::get('companies/create', '\App\Http\Controllers\Admin\CompanyController@create')->name('companies.create');
-    Route::post('companies/store', '\App\Http\Controllers\Admin\CompanyController@store')->name('companies.store');
-    Route::get('companies/edit/{company}', '\App\Http\Controllers\Admin\CompanyController@edit')->name('companies.edit');
-    Route::post('companies/update/{company}', '\App\Http\Controllers\Admin\CompanyController@update')->name('companies.update');
-    Route::delete('companies/delete/{company}', '\App\Http\Controllers\Admin\CompanyController@delete')->name('companies.delete');
+    Route::get('companies', '\App\Http\Controllers\Front\CompanyController@index')->name('companies.index');
+    Route::get('companies/list', '\App\Http\Controllers\Front\CompanyController@list')->name('companies.list');
+    Route::get('companies/create', '\App\Http\Controllers\Front\CompanyController@create')->name('companies.create');
+    Route::post('companies/store', '\App\Http\Controllers\Front\CompanyController@store')->name('companies.store');
+    Route::get('companies/edit/{id}', '\App\Http\Controllers\Front\CompanyController@edit')->name('companies.edit');
+    Route::post('companies/update/{id}', '\App\Http\Controllers\Front\CompanyController@update')->name('companies.update');
+    Route::delete('companies/delete/{id}', '\App\Http\Controllers\Front\CompanyController@destroy')->name('companies.delete');
+
+    Route::get('payment-mode', '\App\Http\Controllers\Front\PaymentModeController@index')->name('payment-mode.index');
+    Route::get('payment-mode/list', '\App\Http\Controllers\Front\PaymentModeController@list')->name('payment-mode.list');
+    Route::get('payment-mode/create', '\App\Http\Controllers\Front\PaymentModeController@create')->name('payment-mode.create');
+    Route::post('payment-mode/store', '\App\Http\Controllers\Front\PaymentModeController@store')->name('payment-mode.store');
+    Route::get('payment-mode/edit/{id}', '\App\Http\Controllers\Front\PaymentModeController@edit')->name('payment-mode.edit');
+    Route::post('payment-mode/update/{id}', '\App\Http\Controllers\Front\PaymentModeController@update')->name('payment-mode.update');
+    Route::delete('payment-mode/delete/{id}', '\App\Http\Controllers\Front\PaymentModeController@destroy')->name('payment-mode.delete');
+
+    Route::get('expense-category', '\App\Http\Controllers\Front\ExpenseCategoryController@index')->name('expense-category.index');
+    Route::get('expense-category/list', '\App\Http\Controllers\Front\ExpenseCategoryController@list')->name('expense-category.list');
+    Route::get('expense-category/create', '\App\Http\Controllers\Front\ExpenseCategoryController@create')->name('expense-category.create');
+    Route::post('expense-category/store', '\App\Http\Controllers\Front\ExpenseCategoryController@store')->name('expense-category.store');
+    Route::get('expense-category/edit/{id}', '\App\Http\Controllers\Front\ExpenseCategoryController@edit')->name('expense-category.edit');
+    Route::post('expense-category/update/{id}', '\App\Http\Controllers\Front\ExpenseCategoryController@update')->name('expense-category.update');
+    Route::delete('expense-category/delete/{id}', '\App\Http\Controllers\Front\ExpenseCategoryController@destroy')->name('expense-category.delete');
 });

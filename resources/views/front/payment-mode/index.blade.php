@@ -5,7 +5,7 @@
 <div class="row">
     <div class="col-12">
         <div class="page-title-box">
-            <h4 class="page-title">Company</h4>
+            <h4 class="page-title">Payment Modes</h4>
             <div class="page-title-right">
             </div>
         </div>
@@ -20,18 +20,16 @@
     <div class="col-lg-12 col-md-12 col-sm-12">
         <div class="card">
             <div class="card-body">
-                <a href="{{ route('companies.create') }}" class="btn btn-primary btn-sm float-end create-member">
-                    <i class="uil uil-plus"></i> Add Comapny
+                <a href="{{ route('payment-mode.create') }}" class="btn btn-primary btn-sm float-end create-member">
+                    <i class="uil uil-plus"></i> Add Payment Mode
                 </a>
-                <h5 class="card-title mt-0 mb-0 header-title">List of Companies</h5>
+                <h5 class="card-title mt-0 mb-0 header-title">List of Payment Mode</h5>
                 <div class="table-responsive mt-4">
                     <!-- Table with stripped rows -->
-                    <table class="table dt-responsive nowrap w-100" id="companyTable">
+                    <table class="table dt-responsive nowrap w-100" id="paymentModeTable">
                         <thead>
                             <tr>
                                 <th>Name</th>
-                                <th>Phone Number</th>
-                                <th>GST Number</th>
                                 <th>Status</th>
                                 <th>Create Date</th>
                                 <th>Action</th>
@@ -49,28 +47,26 @@
 
 @section('custom-script')
 <script>
-    var dataTable = $('#companyTable').DataTable({
+    var dataTable = $('#paymentModeTable').DataTable({
         processing: true,
         serverSide: true,
-        ajax: "{{ route('companies.list') }}",
+        ajax: "{{ route('payment-mode.list') }}",
         columns: [
             {data: 'name', name: 'name'},
-            {data: 'phone_number', name: 'phone_number'},
-            {data: 'gst_number', name: 'gst_number'},
             {data: 'status', name: 'status'},
             {data: 'created_at', name: 'created_at'},
             {data: 'action', name: 'action', orderable: false, searchable: false},
         ]
     });
 
-    $(document).on('click', '.delete-company', function () {
+    $(document).on('click', '.delete-payment-mode', function () {
 
         let form = $(this).closest('form');
         let url = form.attr('action');
 
         Swal.fire({
             title: "Are you sure?",
-            text: "This company will be permanently deleted!",
+            text: "This payemtn mode will be permanently deleted!",
             icon: "warning",
             showCancelButton: true,
             confirmButtonColor: "#d33",

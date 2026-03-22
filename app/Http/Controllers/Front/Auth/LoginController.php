@@ -58,13 +58,7 @@ class LoginController extends Controller {
                 if($user->isUser($user->role)){
                     session()->flash('message','Welcome Back '.$user->name.'.');
                     session()->flash('level','success');
-                    return redirect()->route('user.dashboard');
-                }
-
-                if($user->isManager($user->role)){
-                    session()->flash('message','Welcome Back '.$user->name.'.');
-                    session()->flash('level','success');
-                    return redirect()->route('manager.dashboard');
+                    return redirect()->route('companies.index');
                 }
 
                 //Redirect Back to Login
