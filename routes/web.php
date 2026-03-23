@@ -48,4 +48,12 @@ Route::group(['middleware' => 'user'], function () {
     Route::get('expense-category/edit/{id}', '\App\Http\Controllers\Front\ExpenseCategoryController@edit')->name('expense-category.edit');
     Route::post('expense-category/update/{id}', '\App\Http\Controllers\Front\ExpenseCategoryController@update')->name('expense-category.update');
     Route::delete('expense-category/delete/{id}', '\App\Http\Controllers\Front\ExpenseCategoryController@destroy')->name('expense-category.delete');
+
+    Route::get('product', '\App\Http\Controllers\Front\ProductController@index')->name('product.index');
+    Route::get('product/list', '\App\Http\Controllers\Front\ProductController@list')->name('product.list');
+    Route::get('product/create', '\App\Http\Controllers\Front\ProductController@create')->name('product.create');
+    Route::post('product/store', '\App\Http\Controllers\Front\ProductController@store')->name('product.store');
+    Route::get('product/edit/{id}', '\App\Http\Controllers\Front\ProductController@edit')->name('product.edit');
+    Route::post('product/update/{id}', '\App\Http\Controllers\Front\ProductController@update')->name('product.update');
+    Route::delete('product/delete/{id}', '\App\Http\Controllers\Front\ProductController@destroy')->name('product.delete');
 });
