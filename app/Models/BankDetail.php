@@ -6,6 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class BankDetail extends Model
 {
+    use SoftDeletes;
+
     public $table = 'bank_details';
 
     protected $fillable = [

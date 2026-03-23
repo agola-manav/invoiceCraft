@@ -6,6 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class InvoiceSetting extends Model
 {
+    use SoftDeletes;
+
     public $table = 'invoice_settings';
 
     protected $fillable = [

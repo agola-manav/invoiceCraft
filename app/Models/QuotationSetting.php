@@ -6,6 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class QuotationSetting extends Model
 {
+    use SoftDeletes;
+    
     public $table = 'quotation_settings';
     
     protected $fillable = [
