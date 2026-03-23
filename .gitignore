@@ -17,3 +17,5 @@
 Homestead.json
 Homestead.yaml
 Thumbs.db
+/routes/web.php
+/routes/console.php
