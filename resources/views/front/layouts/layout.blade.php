@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Nexus Living</title>
+    <title>Invoicce Craft</title>
     <!-- App favicon -->
         <link rel="shortcut icon" href="{{ asset('assets/images/favicon.ico') }}">
 
@@ -43,6 +43,11 @@
         <style type="text/css">
             body[data-sidebar-size=condensed] .logo-box {
                 padding: 0 15px;
+            }
+             label.required::after {
+                content: " *";
+                color: red;
+                font-weight: bold;
             }
         </style>
 

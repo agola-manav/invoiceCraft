@@ -1,13 +1,12 @@
-<!-- ================= Company Info ================= -->
 <div class="section-title">Company Information</div>
 <div class="row g-3">
     <div class="col-md-4">
-        <label class="form-label">Name *</label>
+        <label class="form-label required">Name</label>
         <input type="text" class="form-control" name="name" placeholder="Enter company name" value="{{ old('name', $company->name ?? '') }}">
     </div>
 
     <div class="col-md-4">
-        <label class="form-label">Phone Number *</label>
+        <label class="form-label required">Phone Number</label>
         <input type="text" class="form-control" name="phone_number" placeholder="Enter phone number" value="{{ old('phone_number', $company->phone_number ?? '') }}">
     </div>
 
@@ -17,7 +16,7 @@
     </div>
 
     <div class="col-md-4">
-        <label class="form-label">Email *</label>
+        <label class="form-label required">Email</label>
         <input type="text" class="form-control" name="email" placeholder="example@mail.com" value="{{ old('email', $company->email ?? '') }}">
     </div>
 
@@ -64,10 +63,8 @@
 
 <hr class="my-4">
 
-<!-- ================= Bank Details ================= -->
 <div class="section-title">Bank Details</div>
 <div class="row g-3">
-
     <div class="col-md-6">
         <input type="text" class="form-control" name="bank_name" placeholder="Bank Name" value="{{ old('bank_name', optional($company->bankDetail)->bank_name ?? '') }}">
     </div>
@@ -83,15 +80,12 @@
     <div class="col-md-6">
         <input type="text" class="form-control" name="upi_id" placeholder="UPI ID" value="{{ old('upi_id', optional($company->bankDetail)->upi_id ?? '') }}">
     </div>
-
 </div>
 
 <hr class="my-4">
 
-<!-- ================= Invoice ================= -->
 <div class="section-title">Invoice Settings</div>
 <div class="row g-3">
-
     <div class="col-md-6">
         <textarea class="form-control" name="invoice_terms" rows="3" placeholder="Invoice Terms">{{ old('invoice_terms', optional($company->invoiceSetting)->invoice_terms ?? '') }}</textarea>
     </div>
@@ -108,23 +102,18 @@
         <input type="number" class="form-control" name="invoice_counter" value="{{ old('invoice_counter', optional($company->invoiceSetting)->invoice_counter ?? 0) }}">
         <small class="text-muted">Next invoice = +1</small>
     </div>
-
 </div>
 
 <hr class="my-4">
 
-<!-- ================= Quotation ================= -->
 <div class="section-title">Quotation Settings</div>
 <div class="row g-3">
-
     <div class="col-md-6">
         <textarea class="form-control" name="quotation_terms" rows="3" placeholder="Quotation Terms">{{ old('quotation_terms', optional($company->quotationSetting)->quotation_terms ?? '') }}</textarea>
     </div>
 
     <div class="col-md-6">
-        <textarea class="form-control" name="quotation_remarks" rows="3" placeholder="Quotation Remarks">
-            {{ old('quotation_remarks', optional($company->quotationSetting)->quotation_remarks ?? '') }}
-        </textarea>
+        <textarea class="form-control" name="quotation_remarks" rows="3" placeholder="Quotation Remarks">{{ old('quotation_remarks', optional($company->quotationSetting)->quotation_remarks ?? '') }}</textarea>
     </div>
 
     <div class="col-md-6">
@@ -135,5 +124,4 @@
         <input type="number" class="form-control" name="quotation_counter" value="{{ old('quotation_counter', optional($company->quotationSetting)->quotation_counter ?? 0) }}">
         <small class="text-muted">Next quotation = +1</small>
     </div>
-
 </div>
